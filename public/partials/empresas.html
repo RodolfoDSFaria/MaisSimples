@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="navbar-inverse navbar-fixed-top">
+        <div class="container">
+            
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#/home" class="navbar-brand"> Home </a>
+                    </li>
+                    <li clas="dropdown">
+                        <a href="#/contatos" class="navbar-brand"> Contatos </a>
+                    </li>
+                    <li clas="dropdown">
+                        <a href="#/empresas" class="navbar-brand"> Empresas </a>
+                    </li>
+                </ul>    
+            </div>
+                            
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    
+    <p ng-show="mensagem.texto">{{mensagem.texto}}</p>
+
+    <a ng-href="#/empresa" class="btn btn-primary">Nova Empresa</a>
+
+    <input ng-model="filtro" type="search" placeholder="Busca pelo nome">
+
+    <p ng-show="empresas.length">Empresas cadastradas: {{empresas.length}} </p>
+
+    <p class="text-info" ng-hide="empresas.length">Não há empresas cadastradas</p>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>CNPJ</th>
+
+                <th class="text-center">Ação</th>
+            </tr>
+            <tr ng-repeat= "empresa in empresas | filter: filtro">
+
+                <td><a ng-href="#/empresa/{{empresa._id}}">{{empresa.nome}}</a></td>
+                <td>{{empresa.email}}</td>
+                <td>{{empresa.cnpj}}</td>
+
+                <td class="text-center"> <button ng-click="remove(empresa)" class="btn btn-warning">Remover</button></td>
+            </tr>
+        </table>
+    </div>
+</div>

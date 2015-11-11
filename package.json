@@ -1,0 +1,42 @@
+{
+  "name": "maissimples",
+  "version": "1.0.0",
+  "description": "MaisSimples",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emersonw/maissimples.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emersonw/maissimples/issues"
+  },
+  "homepage": "https://github.com/emersonw/maissimples#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "cookie-parser": "^1.4.0",
+    "express": "^4.13.3",
+    "express-session": "^1.12.1",
+    "helmet": "^0.4.2",
+    "load": "^1.0.1",
+    "method-override": "^2.3.5",
+    "mongo-sanitize": "^1.0.0",
+    "mongodb": "^2.0.47",
+    "mongoose": "^4.2.3",
+    "mongoose-findorcreate": "^0.1.2",
+    "passport": "^0.2.2",
+    "passport-github": "^0.1.5",
+    "ejs" : "~0.8.5", 				
+    "passport-local" : "~0.1.6", 	
+    "passport-facebook" : "~1.0.2", 
+    "passport-twitter" : "~1.0.2", 	
+    "connect-flash" : "~0.1.1", 	
+    "bcrypt-nodejs" : "latest" ,
+    "morgan": "~1.0.0"
+  }
+}

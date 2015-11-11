@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="navbar-inverse navbar-fixed-top">
+        <div class="container">
+            
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#/home" class="navbar-brand"> Home </a>
+                    </li>
+                    <li clas="dropdown">
+                        <a href="#/contatos" class="navbar-brand"> Contatos </a>
+                    </li>
+                    <li clas="dropdown">
+                        <a href="#/empresas" class="navbar-brand"> Empresas </a>
+                    </li>
+                </ul>    
+            </div>
+                            
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <h1 class="text-center">Empresa</h1>
+
+    <p ng-show="mensagem.texto">{{mensagem.texto}}</p>
+
+    <form ng-submit="salva()">
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control" id="nome" name="nome" required ng-model="empresa.nome">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <div class="input-group">
+                <span class="input-group-addon">@</span>
+                <input type="email" class="form-control" id="email" placeholder="email@exemplo.com" name="email" ng-model="empresa.email" required>
+            </div>
+        </div>
+            <div class="form-group">
+            <label for="nome">CNPJ</label>
+            <input type="text" class="form-control" id="cnpj" name="cnpj" required ng-model="empresa.cnpj">
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <a href="#/empresas" class="btn btn-default">Voltar</a>
+        </div>
+    </form>
+</div>
