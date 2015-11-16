@@ -46,38 +46,6 @@ module.exports = function(app) {
         );
     };
     
-    controller.salvaContato = function (req, res) {
-        var _id = req.body._id;
-        
-        var dados = {
-            "nome" : req.body.nome,
-            "email" : req.body.email,
-            "empresa" : req.body.empresa
-        };
-        
-        if(_id){
-            Contato.findByIdAndUpdate(_id, dados).exec()
-            .then(
-                function(contato){
-                    res.json(contato);
-                },
-                function(erro){
-                    console.error(erro);
-                    res.status(500).json(erro);
-                }
-            );
-        }else {
-            Contato.create(dados)
-            .then(
-                function(contato) {
-                    res.status(201).json(contato);
-                },
-                function(erro) {
-                    console.log(erro);
-                    res.status(500).json(erro);
-                }
-            );
-        }
-    };
+    
         return controller;
 }

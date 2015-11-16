@@ -1,0 +1,58 @@
+<html>
+  <head>
+
+        <meta charset="utf-8">
+        <title>Mais Simples</title>
+        <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap-theme.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+          <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io.connect('http://192.168.0.102:8080');
+      socket.on('toClient', function (msg) {
+        document.getElementById('historico').innerHTML += msg;
+      });
+      var enviar = function(){
+        var nome = document.getElementById('nome').value;
+        var msg = document.getElementById('mensagem').value;
+        socket.emit('toServer', {nome: nome, msg: msg});
+      };
+    </script>
+
+  </head>
+  <body class="container">
+    <div class="navbar-inverse navbar-fixed-top">
+        <div class="container">
+            
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/#/homeContato" class="navbar-brand"> Home </a>
+                    </li>
+                    <li clas="dropdown">
+                        <a href="/chatContato" class="navbar-brand"> Chat </a>
+                    </li>
+                </ul>    
+            </div>
+                            
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <label  class="text-left">Nome:
+      <input type="text" id="nome" size="30">
+    </label>
+    <label class="text-right" >Mensagem:
+      <input type="text" id="mensagem" size="120">
+    </label>
+    <button class="btn btn-default btn-sm" id="enviar" onclick="enviar();">Enviar</button>
+    <hr>
+    <ul id="historico"> </ul>
+      
+    
+    
+  </body>
+</html>

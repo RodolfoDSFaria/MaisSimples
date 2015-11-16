@@ -11,17 +11,27 @@ angular.module('maissimples', ['ngRoute', 'ngResource']).config(function($routeP
     });
     
     $routeProvider.when('/loginAdmin', {
-        templateUrl: 'partials/loginAdmin.html'
+        templateUrl: 'partials/loginAdmin.html',
+
     });
     
     $routeProvider.when('/loginContato', {
         templateUrl: 'partials/loginContato.html'
+
     });
     
-    $routeProvider.when('/home', {
-        templateUrl: 'partials/home.html',
-        controller: 'HomeController'
+    $routeProvider.when('/homeAdmin', {
+        templateUrl: 'partials/homeAdmin.html',
+        controller: 'HomeAdminController'
 
+    });
+        $routeProvider.when('/homeContato', {
+        templateUrl: 'partials/homeContato.html',
+        controller: 'HomeContatoController'
+    });
+    
+    $routeProvider.when('/chatContato', {
+        templateUrl: 'partials/chatContato.html',
     });
         
     $routeProvider.when('/contatos', {

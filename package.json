@@ -18,8 +18,11 @@
   },
   "homepage": "https://github.com/emersonw/maissimples#readme",
   "dependencies": {
+    "bcrypt-nodejs": "latest",
     "body-parser": "^1.14.1",
+    "connect-flash": "~0.1.1",
     "cookie-parser": "^1.4.0",
+    "ejs": "~0.8.5",
     "express": "^4.13.3",
     "express-session": "^1.12.1",
     "helmet": "^0.4.2",
@@ -29,14 +32,12 @@
     "mongodb": "^2.0.47",
     "mongoose": "^4.2.3",
     "mongoose-findorcreate": "^0.1.2",
+    "morgan": "~1.0.0",
     "passport": "^0.2.2",
+    "passport-facebook": "~1.0.2",
     "passport-github": "^0.1.5",
-    "ejs" : "~0.8.5", 				
-    "passport-local" : "~0.1.6", 	
-    "passport-facebook" : "~1.0.2", 
-    "passport-twitter" : "~1.0.2", 	
-    "connect-flash" : "~0.1.1", 	
-    "bcrypt-nodejs" : "latest" ,
-    "morgan": "~1.0.0"
+    "passport-local": "~0.1.6",
+    "passport-twitter": "~1.0.2",
+    "socket.io": "^1.3.7"
   }
 }
